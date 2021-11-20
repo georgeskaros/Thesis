@@ -1,6 +1,7 @@
 Spectral Decomposition and Sparse Models for Big Data and Robust Data Analytics
 
 
+ABSTRACT
 The volume of trajectory data has become tremendously large in recent years. 
 How to efficiently store and compute such data becomes a challenging task.
 In this thesis, we  propose  a  trajectory  spatial  compression  using  Principal  Component  Analysis.
