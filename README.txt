@@ -1,7 +1,14 @@
 Spectral Decomposition and Sparse Models for Big Data and Robust Data Analytics
 
 
-The volume of trajectory data has become tremendously large in recent years. How to efficiently store and compute such data becomes a challenging task. In this thesis, we  propose  a  trajectory  spatial  compression  using  Principal  Component  Analysis. With the usage of this technique, we could compress the data set by reducing it into principal  componentsi.e.,  vectors  which  contain  condensed  information  of  the movement  of  vehicles.  By  dividing  each  route  into  segments  and  applying  PCA  to them,  we  show  that there  is  a  better  chance  to  find  principal  components  that represent smaller and simpler movements.This allows us to compress trajectory data as well as enable us to cluster the trajectory data using a well-known density-based spatial clustering algorithm, DBSCAN, without achieving a point focus clustering. The proposed technique significantly reduces the size of the original data while retaining most of information. In addition to trajectory-based clustering, a significant reduction in computation times is achieved as well.
+The volume of trajectory data has become tremendously large in recent years. 
+How to efficiently store and compute such data becomes a challenging task.
+In this thesis, we  propose  a  trajectory  spatial  compression  using  Principal  Component  Analysis.
+With the usage of this technique, we could compress the data set by reducing it into principal  componentsi.e.,  vectors  which  contain  condensed  information  of  the movement  of  vehicles.  
+By  dividing  each  route  into  segments  and  applying  PCA  to them,  we  show  that there  is  a  better  chance  to  find  principal  components  that represent smaller and simpler movements.
+This allows us to compress trajectory data as well as enable us to cluster the trajectory data using a well-known density-based spatial clustering algorithm, DBSCAN, without achieving a point focus clustering.
+The proposed technique significantly reduces the size of the original data while retaining most of information. 
+In addition to trajectory-based clustering, a significant reduction in computation times is achieved as well.
 
 
 Python 3.8 and ProsgreSQL 12.8 used in this analysis.
