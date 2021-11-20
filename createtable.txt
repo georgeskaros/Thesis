@@ -1,0 +1,57 @@
+CREATE TABLE  TRIPS (
+    TRIP_ID numeric,
+    CALL_TYPE varchar(2),
+    ORIGIN_CALL text,
+	ORIGIN_STAND text,
+	TAXI_ID numeric,
+	TIMESTAMP numeric,
+	DAYTYPE varchar(2),
+	MISSING_DATA boolean,
+	POLYLINE text    
+);
+
+
+
+CREATE TABLE  TRIP_TUPLES (
+    TRIP_ID numeric,
+	TIMESTAMP numeric,
+	LONGITUDE numeric(10,6),
+	LATITUDE numeric(16,8),
+	POINT_text varchar(30)
+);
+
+
+CREATE TABLE  BEFORE_PCA_N (
+	TRIP_ID numeric,
+	LONGITUDE numeric(16,8),
+	LATITUDE numeric(16,8)
+);
+
+
+CREATE TABLE  AFTER_PCA (
+	LONGITUDE numeric(16,8),
+	LATITUDE numeric(16,8)
+);
+
+
+CREATE TABLE  preprocessed (
+    TRIP_ID numeric,
+	TIMESTAMP numeric,
+	LONGITUDE numeric(10,6),
+	LATITUDE numeric(16,8),
+	velocity numeric,
+	acceleration numeric
+);
+
+select polyline
+from train
+where missing_data=true
+
+
+ALTER TABLE trip_tuples ADD COLUMN geom geometry(Point, 4326);
+UPDATE trip_tuples SET geom = ST_SetSRID(ST_MakePoint(longitude, latitude), 4326);
+
+
+DELETE
+FROM trip_tuples
+where not ST_Intersects(geom, ST_Buffer(CAST(ST_GeomFromText('POINT(-8.374520 41.092812)', 4326)AS geography),30000))
